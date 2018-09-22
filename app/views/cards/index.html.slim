@@ -1,27 +1,25 @@
-h1 Listing cards
+= link_to 'New Card',
+          new_card_path,
+          class: "btn btn-outline-primary btn-sm"
 
-table
-  thead
+table.table.table-hover
+  thead.thead-light
     tr
       th Term
       th Context
       th Term translation
       th Context translation
       th
-      th
-      th
 
   tbody
     - @cards.each do |card|
-      tr
+      tr data-href=edit_card_path(card)
         td = card.term
-        td = card.context
+        td = card.context.html_safe
         td = card.term_translation
-        td = card.context_translation
-        td = link_to 'Show', card
-        td = link_to 'Edit', edit_card_path(card)
-        td = link_to 'Destroy', card, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Card', new_card_path
+        td = card.context_translation.html_safe
+        td = link_to 'Destroy',
+                     card,
+                     data: { confirm: 'Are you sure?' },
+                     method: :delete,
+                     class: "btn btn-outline-danger btn-sm"
