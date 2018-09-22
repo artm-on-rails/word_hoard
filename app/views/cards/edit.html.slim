@@ -7,4 +7,9 @@
 
   .card-footer
     = link_to 'Show', @card, class: "card-link"
+    = link_to 'Destroy',
+                 @card,
+                 data: { confirm: 'Are you sure?' },
+                 method: :delete,
+                 class: "card-link text-danger"
     = link_to 'Back', cards_path, class: "card-link"

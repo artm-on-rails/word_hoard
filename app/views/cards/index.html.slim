@@ -6,20 +6,14 @@ table.table.table-hover
   thead.thead-light
     tr
       th Term
-      th Context
       th Term translation
+      th Context
       th Context translation
-      th
 
   tbody
     - @cards.each do |card|
       tr data-href=edit_card_path(card)
         td = card.term
-        td = card.context.html_safe
         td = card.term_translation
+        td = card.context.html_safe
         td = card.context_translation.html_safe
-        td = link_to 'Destroy',
-                     card,
-                     data: { confirm: 'Are you sure?' },
-                     method: :delete,
-                     class: "btn btn-outline-danger btn-sm"
