@@ -1,5 +1,9 @@
-h1 New card
 
-== render 'form'
+.card
+  .card-body
+    h1.card-title New card
 
-= link_to 'Back', cards_path
+    == render 'form'
+
+  .card-footer
+    = link_to 'Back', cards_path, class: "card-link"
