@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -e
+
+ANKI_DATA_DIR="${HOME}/Documents/Anki"
+ANKI_USER="User 1"
+ANKI_MEDIA_DIR="${ANKI_DATA_DIR}/${ANKI_USER}/collection.media"
+ANKI_CARDS_FILE="${ANKI_DATA_DIR}/All Decks.txt"
+
+EXCHANGE_DIR="./tmp/exchange"
+HOARD_CARDS_FILE="${EXCHANGE_DIR}/cards.tsv"
+HOARD_MEDIA_DIR="${EXCHANGE_DIR}/media"
+
+r()
+{
+  echo -e "\e[1m$@\e[0m"
+  "$@"
+}
+
+fetch()
+{
+  r mkdir -p "${EXCHANGE_DIR}"
+  r rsync -uv "${ANKI_CARDS_FILE}" "${HOARD_CARDS_FILE}"
+  r rsync -auv "${ANKI_MEDIA_DIR}/" "${HOARD_MEDIA_DIR}"
+}
+
+rails()
+{
+  r docker-compose run app rails "$@"
+}
+
+load()
+{
+  rails db:seed
+}
+
+case "$1" in
+  "fetch")
+    fetch
+  ;;
+  "load")
+    load
+  ;;
+  "import")
+    fetch
+    load
+  ;;
+  *)
+    echo "Unknown command '$1'"
+    exit 1
+esac
