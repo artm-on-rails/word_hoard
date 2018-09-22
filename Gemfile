@@ -24,6 +24,8 @@ gem "paperclip"
 gem "active_decorator"
 # boot large Ruby/Rails apps faster
 gem "bootsnap"
+# non AR models
+gem "active_attr"
 
 group :development do
   # faster rails command line
