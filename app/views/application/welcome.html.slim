@@ -1,0 +1,10 @@
+H1 Welkom
+
+- if Rails.env.development?
+  - if params[:error].present?
+    = raise StandardError,           "As dit niet in BetterErrors opent, zie better_errors initializer"
+  - else
+    ' Klik
+    => link_to root_path(error: 1) do
+      - "hier"
+    ' om BetterErrors te testen
