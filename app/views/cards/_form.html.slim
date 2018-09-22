@@ -1,0 +1,12 @@
+= simple_form_for(@card) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :term
+    = f.input :context
+    = f.input :term_translation
+    = f.input :context_translation
+
+  .form-actions
+    = f.button :submit

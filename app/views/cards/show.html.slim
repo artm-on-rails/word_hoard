@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Term:
+  = @card.term
+p
+  strong Context:
+  = @card.context
+p
+  strong Term translation:
+  = @card.term_translation
+p
+  strong Context translation:
+  = @card.context_translation
+
+=> link_to 'Edit', edit_card_path(@card)
+'|
+=< link_to 'Back', cards_path
