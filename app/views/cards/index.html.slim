@@ -12,7 +12,7 @@ table.table.table-hover
 
   tbody
     - @cards.each do |card|
-      tr data-href=edit_card_path(card)
+      tr data-href=card_path(card)
         td = card.term
         td = card.term_translation
         td = card.context.html_safe
