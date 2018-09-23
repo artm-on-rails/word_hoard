@@ -17,9 +17,6 @@ gem "slim-rails"
 gem "uglifier"
 # faster click through
 gem "turbolinks"
-
-# attachments
-gem "paperclip"
 # object oriented view helpers / model wrappers
 gem "active_decorator"
 # boot large Ruby/Rails apps faster
