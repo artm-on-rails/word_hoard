@@ -1,27 +1,26 @@
 .flip {
   -webkit-perspective: 800;
   perspective: 800;
-}
 
-.flip.flipped {
-  -webkit-transform: rotatey(-180deg);
-  transform: rotatey(-180deg);
-}
+  &.flipped {
+    -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+  }
 
-.flip { // this used to be card nested inside a flip ...
+  // this used to be card nested inside a flip ...
   -webkit-transform-style: preserve-3d;
   -webkit-transition: 0.5s;
   transform-style: preserve-3d;
   transition: 0.5s;
-}
 
-.flip .face {
-  -webkit-backface-visibility: hidden ;
-  backface-visibility: hidden ;
-}
+  .face {
+    -webkit-backface-visibility: hidden ;
+    backface-visibility: hidden ;
+  }
 
-.flip .back {
-  position: absolute;
-  -webkit-transform: rotatey(-180deg);
-  transform: rotatey(-180deg);
+  .back {
+    position: absolute;
+    -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+  }
 }
