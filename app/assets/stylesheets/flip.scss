@@ -9,7 +9,7 @@
   transform-style: preserve-3d;
   transition: 0.5s;
 
-  .face {
+  .front, .back {
     backface-visibility: hidden ;
   }
 
