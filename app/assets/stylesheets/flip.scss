@@ -1,20 +1,22 @@
 .flip {
-  perspective: 800;
+  perspective: 1000px;
 
-  &.flipped {
+  .flipped {
     transform: rotatey(-180deg);
   }
 
-  // this used to be card nested inside a flip ...
-  transform-style: preserve-3d;
-  transition: 0.5s;
+  & > * {
+    transform-style: preserve-3d;
+    transition: 0.5s;
 
-  .front, .back {
-    backface-visibility: hidden ;
-  }
+    .front, .back {
+      backface-visibility: hidden ;
+    }
 
-  .back {
-    position: absolute;
-    transform: rotatey(-180deg);
+    .back {
+      position: absolute;
+      top: 0;
+      transform: rotatey(-180deg);
+    }
   }
 }
