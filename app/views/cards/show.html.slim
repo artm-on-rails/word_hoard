@@ -1,32 +1,28 @@
 p#notice = notice
 
-.row
-  .col-md-4
-    .flip
-      .card.term-card
-        .face.front
-          .card-header passive front
-          .card-body
-            .content
-              = render "passive_card_front"
-        .face.back
-          .card-header passive back
-          .card-body
-            .content
-              = render "passive_card_back"
-  .col-md-4
-    .flip
-      .card.term-card
-        .face.front
-          .card-header active front
-          .card-body
-            .content
-              = render "active_card_front"
-        .face.back
-          .card-header active back
-          .card-body
-            .content
-              = render "active_card_back"
+.card-deck
+  .flip.card.term-card
+    .face.front
+      .card-header passive front
+      .card-body
+        .content
+          = render "passive_card_front"
+    .face.back
+      .card-header passive back
+      .card-body
+        .content
+          = render "passive_card_back"
+  .flip.card.term-card
+    .face.front
+      .card-header active front
+      .card-body
+        .content
+          = render "active_card_front"
+    .face.back
+      .card-header active back
+      .card-body
+        .content
+          = render "active_card_back"
 
 => link_to 'Edit', edit_card_path(@card)
 '|
