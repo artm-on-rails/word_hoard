@@ -1,6 +1,9 @@
 module Hoard
   module Exchange
-    CARD_FILE = Rails.root.join("tmp", "exchange", "cards.tsv")
+    ROOT = Rails.root.join("tmp", "exchange")
+    CARDS_FILE = ROOT.join("cards.tsv")
+    MEDIA_DIR = ROOT.join("media")
+    AUDIO_CONTENT_TYPE = "audio/mpeg"
     CSV_OPTIONS = {
       col_sep: "\t",
       headers: %w[
