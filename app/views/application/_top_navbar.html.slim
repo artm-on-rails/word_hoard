@@ -1,0 +1,10 @@
+.navbar.navbar-expand-sm.navbar-dark.bg-dark
+  a.navbar-brand href="#" Word Hoard
+  button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item = link_to "Cards", cards_path, class: "nav-link"
+      li.nav-item = link_to "Add", new_card_path, class: "nav-link"
+      - if content_for?(:top_navbar)
+        = yield :top_navbar
