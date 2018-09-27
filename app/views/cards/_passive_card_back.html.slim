@@ -1,6 +1,6 @@
 h1= @card.term
 p= @card.context.html_safe
-p: a href="#" audio
+p = render "card_audio"
 hr
 p = @card.context_translation.html_safe
 h1 = @card.term_translation

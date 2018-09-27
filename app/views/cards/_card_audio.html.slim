@@ -1,0 +1,6 @@
+- unless @audio_rendered
+  audio#card_audio src=url_for(@card.audio)
+  - @audio_rendered = true
+
+a.btn.btn-light.btn-sm data-play="#card_audio"
+  i.fas.fa-play
