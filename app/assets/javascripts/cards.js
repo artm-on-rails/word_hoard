@@ -10,6 +10,8 @@ $(document).on("turbolinks:load", function() {
   });
 
   $("[data-play]").on("click", function() {
-    $("#card_audio").get(0).play();
+    var player = $("#card_audio").get(0);
+    player.currentTime = 0;
+    player.play();
   });
 });
