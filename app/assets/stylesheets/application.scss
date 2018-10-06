@@ -1,5 +1,4 @@
-//= require @fortawesome/fontawesome-free/css/all.css
-@import "bootstrap/dist/css/bootstrap";
-@import "flip";
-@import "cards";
-@import "forms";
+@import "@fortawesome/fontawesome-free/css/all";
+@import "bootstrap/scss/bootstrap";
+@import "trix/dist/trix";
+@import "*";
