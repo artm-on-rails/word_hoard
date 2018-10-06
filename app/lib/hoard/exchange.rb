@@ -3,6 +3,7 @@ module Hoard
     ROOT = Rails.root.join("tmp", "exchange")
     CARDS_FILE = ROOT.join("cards.tsv")
     MEDIA_DIR = ROOT.join("media")
+    AUDIO_CLIPS_DIR = ROOT.join("audio_clips")
     AUDIO_CONTENT_TYPE = "audio/mpeg"
     CSV_OPTIONS = {
       col_sep: "\t",
