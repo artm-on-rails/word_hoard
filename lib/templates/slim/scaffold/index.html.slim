@@ -1,0 +1,15 @@
+table.table.table-hover
+  thead.thead-light
+    tr
+<% attributes.each do |attribute| -%>
+      th <%= attribute.human_name %>
+<% end -%>
+
+  tbody
+    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+      tr data-href=<%= singular_table_name %>_path(<%= singular_table_name %>)
+<% attributes.each do |attribute| -%>
+        td = <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+
+= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, class: "btn btn-light"
