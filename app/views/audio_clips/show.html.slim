@@ -1,7 +1,10 @@
 p#notice = notice
 
 h1 = @audio_clip.title
-  
+
+div data-wavesurfer=url_for(@audio_clip.audio)
+  a.btn.btn-light data-toggle="play"
+    | play
 
 => link_to 'Edit', edit_audio_clip_path(@audio_clip), class: "btn btn-light"
 =< link_to 'Back', audio_clips_path, class: "btn btn-light"
