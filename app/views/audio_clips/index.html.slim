@@ -1,0 +1,11 @@
+table.table.table-hover
+  thead.thead-light
+    tr
+      th Title
+
+  tbody
+    - @audio_clips.each do |audio_clip|
+      tr data-href=audio_clip_path(audio_clip)
+        td = audio_clip.title
+
+= link_to 'New Audio clip', new_audio_clip_path, class: "btn btn-light"

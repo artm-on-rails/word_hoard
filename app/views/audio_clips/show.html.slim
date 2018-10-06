@@ -1,0 +1,8 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @audio_clip.title
+
+=> link_to 'Edit', edit_audio_clip_path(@audio_clip), class: "btn btn-light"
+=< link_to 'Back', audio_clips_path, class: "btn btn-light"
