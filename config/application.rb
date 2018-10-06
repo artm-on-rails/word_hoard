@@ -9,12 +9,12 @@ Bundler.require(*Rails.groups)
 module WordHoard
   class Application < Rails::Application
     config.time_zone = "Amsterdam"
-        config.i18n.enforce_available_locales = true
-        config.i18n.default_locale = :en
-        # English locale is necessary for rails metaprogramming internals even when
-        # not provided by the application to the users
-        config.i18n.available_locales = [:en]
-        config.i18n.load_path += Dir["#{Rails.root}/config/locales/*/*"]
+    config.i18n.enforce_available_locales = true
+    config.i18n.default_locale = :en
+    # English locale is necessary for rails metaprogramming internals even when
+    # not provided by the application to the users
+    config.i18n.available_locales = [:en]
+    config.i18n.load_path += Dir["#{Rails.root}/config/locales/*/*"]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -22,5 +22,10 @@ module WordHoard
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.generators do |g|
+      g.scaffold_stylesheet false
+      g.stylesheets false
+      g.javascripts false
+    end
   end
 end
