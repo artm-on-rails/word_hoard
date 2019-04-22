@@ -2,9 +2,20 @@ p#notice = notice
 
 h1 = @audio_clip.title
 
-div data-wavesurfer=url_for(@audio_clip.audio)
-  a.btn.btn-light data-toggle="play"
-    | play
+.mb-3 data-wavesurfer=url_for(@audio_clip.audio)
+  .mb-3
+    a.btn.btn-light data-toggle="prev-loop"
+      i.fas.fa-chevron-circle-left
+    a.btn.btn-light data-toggle="play"
+      i.fas.fa-play
+    a.btn.btn-light data-toggle="play-loop"
+      i.fas.fa-play-circle
+    a.btn.btn-light data-toggle="shrink-loop"
+      i.fas.fa-minus-circle
+    a.btn.btn-light data-toggle="grow-loop"
+      i.fas.fa-plus-circle
+    a.btn.btn-light data-toggle="next-loop"
+      i.fas.fa-chevron-circle-right
 
 => link_to 'Edit', edit_audio_clip_path(@audio_clip), class: "btn btn-light"
 =< link_to 'Back', audio_clips_path, class: "btn btn-light"
